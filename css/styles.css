@@ -1,0 +1,119 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+:root{
+    --font-family-crimson: 'Crimson Pro', serif;
+
+    --font-family-lora: 'Lora', serif;
+
+    --font-family-montserrat: 'Montserrat', sans-serif;
+}
+
+body {
+    background: #181719;
+    color: #FFFFFF;
+    margin: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 1.188rem 0.75rem;
+}
+
+/***********************************************************/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+nav .logo {
+    border: 1px solid #FFFFFF;
+    width: 103px;
+    height: 31px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .logo p {
+    font-family: var(--font-family-crimson);
+    font-weight: 200;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+nav .hamburger{
+    display: block;
+    width: 1.781rem;
+    cursor: pointer;
+}
+
+nav .hamburger:hover{
+    filter:brightness(0.75);
+}
+
+nav .hamburger-icon{
+    width: 100%;
+}
+
+nav ul {
+    display: none;
+}
+
+nav .cross-icon{
+    display: none;
+}
+
+/* OPEN NAVIGATION */
+
+nav.show .logo{
+    opacity: 0;
+}
+
+nav.show .hamburger-icon{
+    display: none;
+}
+
+nav.show .cross-icon{
+    display: block;
+    width: 100%;
+}
+
+nav.show .cross-icon:hover{
+    filter:brightness(0.75);
+}
+
+
+nav.show ul{
+    display: block;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -50%)
+}
+
+nav.show ul li{
+    list-style: none;
+    text-align: center;
+}
+
+nav.show ul li a{
+    text-decoration: none;
+    color: inherit;
+
+    font-family: var(--font-family-montserrat);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 65px;
+}
+
+nav.show ul li.active a{
+    font-weight: 700;
+    border-bottom: 3px solid #FFFFFF;
+    padding-bottom: 3px;
+}
+
+/*********************************************************/
+

@@ -194,7 +194,7 @@ section.hero .image .card .info{
 section.hero .image .card .info .dp{
     width: 3rem;
     height: 3rem;
-    background: url("/images/photo2.png");
+    background: url("./images/photo2.png");
     background-size: contain;
     background-position: center;
     border-radius:50%;

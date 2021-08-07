@@ -15,8 +15,6 @@ body {
     color: #FFFFFF;
     margin: 0;
     font-family: var(--font-family-montserrat);
-    min-height: 100vh;
-    min-width: 100vw;
     padding: 1.188rem 0.75rem;
 }
 
@@ -49,9 +47,12 @@ nav .hamburger{
     display: block;
     width: 1.781rem;
     cursor: pointer;
+    transition: all 250ms ease;
+
 }
 
-nav .hamburger:hover{
+nav .hamburger:hover,
+nav .hamburger:focus{
     filter:brightness(0.75);
 }
 
@@ -81,9 +82,11 @@ nav.show .hamburger-icon{
 nav.show .cross-icon{
     display: block;
     width: 100%;
+    transition: all 250ms ease;
 }
 
-nav.show .cross-icon:hover{
+nav.show .cross-icon:hover,
+nav.show .cross-icon:focus{
     filter:brightness(0.75);
 }
 
@@ -96,12 +99,14 @@ nav.show ul{
     transform: translate(-60%, -50%)
 }
 
-nav.show ul li{
+nav ul li{
     list-style: none;
     text-align: center;
+    transition: all 250ms ease;
+
 }
 
-nav.show ul li a{
+nav ul li a{
     text-decoration: none;
     color: inherit;
 
@@ -109,9 +114,18 @@ nav.show ul li a{
     font-weight: 500;
     font-size: 18px;
     line-height: 65px;
+
+    border-bottom: 3px solid transparent;
+    padding-bottom: 3px;
+    transition: all 300ms ease;
 }
 
-nav.show ul li.active a{
+nav ul li a:hover {
+    border-bottom: 3px solid #FFFFFF;
+    padding-bottom: 3px;
+}
+
+nav ul li.active a{
     font-weight: 700;
     border-bottom: 3px solid #FFFFFF;
     padding-bottom: 3px;
@@ -132,6 +146,11 @@ section.hero .about {
     font-size: 14px;
     margin-bottom: 2.5rem;
 }
+
+section.hero .about span{
+    cursor: pointer;
+}
+
 section.hero .about h1 {
     font-family: var(--font-family-lora);
     font-weight: 500;
@@ -173,11 +192,11 @@ section.hero .image .card .info{
 }
 
 section.hero .image .card .info .dp{
-    width: 3em;
-    height: 3em;
+    width: 3rem;
+    height: 3rem;
     background: url("/images/photo2.png");
     background-size: contain;
-    background-position: center center;
+    background-position: center;
     border-radius:50%;
     margin: 0.5rem 1rem; 
 }
@@ -206,3 +225,129 @@ section.hero .image .card .title {
 }
 
 /*******************************************************/
+
+@media (min-width: 768px){
+    body {
+        padding: 2.625rem 4.813rem;
+    }
+
+    nav .hamburger{
+        display: none;
+    }
+    nav ul {
+        display: flex;
+        margin: 0;
+
+    }
+    nav ul li {
+        margin-right: 3rem;
+    }
+
+    nav ul li:last-child {
+        margin-right: 0;
+    }
+
+    section.hero {
+        display: flex;
+        margin-top: 13.5rem;
+    }
+
+    section.hero .about {
+        flex: 1;
+    }
+
+    section.hero .image {
+        flex: 1;
+    }
+
+    section.hero .image .card {
+        bottom: -5rem;
+        right: 0.8rem;
+    }
+
+    /* section.hero .about h1{
+        font-size: 48px;
+    }
+    
+    section.hero .about p {
+        font-size: 24px;
+    }
+
+    section.hero .image .card {
+        width: 25.625rem;
+        height: 11.813rem;
+    }
+    section.hero .image .card .info .dp{
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    section.hero .image .card .name {
+         font-size: 14px;
+    }
+    section.hero .image .card .prof {
+        font-size: 12px;
+    }
+    section.hero .image .card .title {
+        font-size: 24px;
+    } */
+}
+
+@media (min-width: 1024px){
+
+    nav ul li {
+        margin-right: 5rem;
+    }
+
+    nav ul li:last-child {
+        margin-right: 0;
+    }
+
+    section.hero {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+
+    }
+    
+    section.hero .about {
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    section.hero .about h1{
+        font-size: 48px;
+    }
+    
+    section.hero .about p {
+        font-size: 24px;
+        padding-right: 13rem;
+    }
+
+    section.hero .image .card {
+        width: 25.625rem;
+        height: 11.813rem;
+    }
+    section.hero .image .card .info .dp{
+        width: 3.5rem;
+        height: 3.5rem;
+        margin: 0.75rem 1.25rem; 
+
+    }
+    section.hero .image .card .name {
+         font-size: 14px;
+    }
+    section.hero .image .card .prof {
+        font-size: 12px;
+    }
+    section.hero .image .card .title {
+        font-size: 24px;
+    }
+}
+
+/* @media (min-width: 1440px){
+    section.hero {
+        margin-top: 13.5rem;
+        margin-bottom: 13.5rem;
+    }
+} */
